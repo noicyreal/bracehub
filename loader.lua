@@ -10,6 +10,7 @@ local scripts = {
     [132640332499066] = "https://raw.githubusercontent.com/noicyreal/bracehub/main/anarchy.luau",
     [5938036553] = "https://raw.githubusercontent.com/noicyreal/bracehub/main/frontlines.luau",
     [110808833601416] = "https://raw.githubusercontent.com/noicyreal/bracehub/main/cham.lua"
+    [118367369949006] = "https://raw.githubusercontent.com/noicyreal/bracehub/main/war.luau"
 }
 
 local url = scripts[placeId]
