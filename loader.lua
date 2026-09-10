@@ -14,14 +14,34 @@ local scripts = {
 
 local url = scripts[placeId]
 
-if url then
-    local success, err = pcall(function()
-        loadstring(game:HttpGet(url))()
-    end)
-
-    if not success then
-        warn("Failed to load script:", err)
-    end
-else
+if not url then
     player:Kick("Game not supported.")
+    return
+end
+
+if type(loadstring) ~= "function" then
+    warn("Your executor does not support loadstring.")
+    return
+end
+
+local httpSuccess, source = pcall(function()
+    return game:HttpGet(url)
+end)
+
+if not httpSuccess then
+    warn("Failed to download script:", source)
+    return
+end
+
+local func, compileError = loadstring(source)
+
+if not func then
+    warn("Failed to compile script:", compileError)
+    return
+end
+
+local runSuccess, runError = pcall(func)
+
+if not runSuccess then
+    warn("Script error:", runError)
 end
