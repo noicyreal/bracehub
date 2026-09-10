@@ -20,17 +20,20 @@ if not url then
     return
 end
 
-local success, err = pcall(function()
-    local source = game:HttpGet(url)
-    local scriptToRun = loadstring(source)
+local source = game:HttpGet(url)
 
-    if not scriptToRun then
-        error("Couldn't load the script.")
-    end
+local func, loadError = loadstring(source)
 
-    scriptToRun()
+if not func then
+    warn("Could not load script:", loadError)
+    return
+end
+
+local success, runError = xpcall(func, function(err)
+    return debug.traceback(err)
 end)
 
 if not success then
-    warn("Something went to shit:", err)
+    warn("Loaded script crashed:")
+    warn(runError)
 end
