@@ -10,7 +10,7 @@ local scripts = {
     [132640332499066] = "https://raw.githubusercontent.com/noicyreal/bracehub/main/anarchy.luau",
     [5938036553] = "https://raw.githubusercontent.com/noicyreal/bracehub/main/frontlines.luau",
     [110808833601416] = "https://raw.githubusercontent.com/noicyreal/bracehub/main/cham.lua",
-    [118367369949006] = "https://raw.githubusercontent.com/noicyreal/bracehub/main/war.luau",
+    [118367369949006] = "https://raw.githubusercontent.com/noicyreal/bracehub/main/war.luau"
 }
 
 local url = scripts[placeId]
@@ -20,29 +20,17 @@ if not url then
     return
 end
 
-if type(loadstring) ~= "function" then
-    warn("Your executor does not support loadstring.")
-    return
-end
+local success, err = pcall(function()
+    local source = game:HttpGet(url)
+    local scriptToRun = loadstring(source)
 
-local httpSuccess, source = pcall(function()
-    return game:HttpGet(url)
+    if not scriptToRun then
+        error("Couldn't load the script.")
+    end
+
+    scriptToRun()
 end)
 
-if not httpSuccess then
-    warn("Failed to download script:", source)
-    return
-end
-
-local func, compileError = loadstring(source)
-
-if not func then
-    warn("Failed to compile script:", compileError)
-    return
-end
-
-local runSuccess, runError = pcall(func)
-
-if not runSuccess then
-    warn("Script error:", runError)
+if not success then
+    warn("Something went to shit:", err)
 end
