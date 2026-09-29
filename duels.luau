@@ -1,3 +1,1 @@
-script_key = "%KEY%"
-
-loadstring(game:HttpGet("https://api.getpolsec.com/scripts/hosted/540fe6d66f42a8f177b632d9835f7bfe6f97ee50f4821d6676cdce0e0f70b9a7.lua"))()
+loadstring(game:HttpGet("https://flowauth.net/v1/loaders/4261e6481a91c75e9b3ceb304c409b8d.lua"))()
