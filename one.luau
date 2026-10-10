@@ -1,1 +1,1 @@
-loadstring(game:HttpGet("https://raw.githubusercontent.com/noicyreal/bracehub/refs/heads/main/one.luau"))()
+loadstring(game:HttpGet("https://flowauth.net/v1/loaders/28549fda286ab8d392682a51495332e4.lua"))()
