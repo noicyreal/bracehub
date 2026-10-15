@@ -1,4 +1,4 @@
-local MAIN_URL = "https://flowauth.net/v1/ui/1e2910081d4bef6668dbb966c4b9057f.lua"
+local MAIN_URL = "https://luaprot.noic.fun/loader/s/scr_0239cbba5804dfe2"
 local ONYX_URL = "https://raw.githubusercontent.com/onyxuilibrary/onyx-ui/main/source.lua"
 
 local function runMain()
