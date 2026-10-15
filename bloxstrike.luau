@@ -1,4 +1,4 @@
-local MAIN_URL = "https://vampauth.com/api/projects/badcdb1d-4743-455c-9134-1824725f7105/scripts/bsnoic"
+local MAIN_URL = "https://flowauth.net/v1/ui/1e2910081d4bef6668dbb966c4b9057f.lua"
 local ONYX_URL = "https://raw.githubusercontent.com/onyxuilibrary/onyx-ui/main/source.lua"
 
 local function runMain()
