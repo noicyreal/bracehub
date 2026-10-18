@@ -1,1 +1,1 @@
-loadstring(game:HttpGet("https://luaprot.noic.fun/loader/s/scr_bda3f77c97ebf935"))()
+loadstring(game:HttpGet("https://luaprot.noic.fun/loader/s/scr_b2420e651fd71006"))()
